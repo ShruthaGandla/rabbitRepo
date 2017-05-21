@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All the rabbits in pack</title>
+  </head>
+  <body>
+    <h1>All the rabbits in pack</h1>
+    <% if(typeof(errors) != 'undefined' ) { %>
+     <% for (var x in errors) { %>
+      <h3><%= errors[x].message %></h3>
+     <% } %>
+    <% } %>
+
+    <% if( typeof(rabbits) != 'undefined') { %>
+        <% for (var x in rabbits) { %>
+          <p>Name:"<%=rabbits[x].name%>"</p>
+          <p>Color:"<%=rabbits[x].color%>"</p>
+          <p>Age:"<%=rabbits[x].age%>"</p><hr>
+        <% } %>
+    <% } else{ %>
+          <p>Retrieved only one</p>
+          <p>Name:"<%=rabbit.name%>"</p>
+          <p>Color:"<%=rabbit.color%>"</p>
+          <p>Age:"<%=rabbit.age%>"</p>
+    <% } %>
+
+  </body>
+</html>

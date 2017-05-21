@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <% if(typeof(errors) != 'undefined' ) { %>
+     <% for (var x in errors) { %>
+      <h3><%= errors[x].message %></h3>
+     <% } %>
+    <% } %>
+    <form action="/rabbits/<%=id%>" method="post">
+
+      Name:<input type="text" name="name"><br>
+        Color:<input type="text" name="color"><br>
+        Age:<input type="text" name="age"><br>
+          <input type="submit" name="edit" value="edit">
+
+    </form>
+
+    <form action='/rabbits/destroy/<%=id%>' method="post">
+      <input type="submit" value="Destroy">
+
+    </form>
+
+    
+
+  </body>
+</html>
